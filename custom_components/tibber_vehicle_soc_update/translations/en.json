@@ -1,0 +1,23 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configure Tibber vehicle SoC updates",
+        "description": "Provide the Tibber account credentials and the IDs for the home and vehicle to update.",
+        "data": {
+          "car_name": "Car name",
+          "email": "Email",
+          "password": "Password",
+          "home_id": "Home ID",
+          "vehicle_id": "Vehicle ID"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not connect to Tibber with the provided details"
+    },
+    "abort": {
+      "already_configured": "This Tibber home and vehicle pair is already configured"
+    }
+  }
+}

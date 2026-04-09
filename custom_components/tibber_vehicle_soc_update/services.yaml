@@ -1,0 +1,21 @@
+set_soc:
+  name: Set vehicle SoC
+  description: Update the Tibber vehicle SoC with a fixed value, typically from an automation.
+  fields:
+    config_entry_id:
+      name: Vehicle
+      description: Select the configured vehicle to update.
+      required: true
+      selector:
+        config_entry:
+          integration: tibber_vehicle_soc_update
+    soc:
+      name: SoC
+      description: The battery percentage to write to Tibber.
+      required: true
+      example: 63
+      selector:
+        number:
+          min: 0
+          max: 100
+          mode: box

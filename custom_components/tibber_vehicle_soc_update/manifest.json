@@ -1,0 +1,16 @@
+{
+  "domain": "tibber_vehicle_soc_update",
+  "name": "Tibber Vehicle SoC Update",
+  "codeowners": [],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/WickedGhost/tibber_vehicle_soc_update",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/WickedGhost/tibber_vehicle_soc_update/issues",
+  "loggers": [
+    "custom_components.tibber_vehicle_soc_update"
+  ],
+  "requirements": [],
+  "version": "1.0.1"
+}
