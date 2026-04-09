@@ -1,9 +1,6 @@
 {
   "name": "Tibber Vehicle SoC Update",
   "content_in_root": false,
-  "domains": [
-    "tibber_vehicle_soc_update"
-  ],
   "homeassistant": "2024.8.0",
   "render_readme": true
 }
