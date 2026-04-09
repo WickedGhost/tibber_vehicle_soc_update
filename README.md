@@ -43,6 +43,27 @@ The config flow asks for:
 
 The friendly car name is used as the integration entry name in Home Assistant, so you do not have to identify the setup by raw `vehicle_id`.
 
+## Finding home ID and vehicle ID
+
+You need to use Tibber's Open Data API to find the correct values:
+
+- Documentation: [https://data-api.tibber.com/docs/](https://data-api.tibber.com/docs/)
+- Playground: [https://data-api.tibber.com/playground/](https://data-api.tibber.com/playground/)
+
+Typical flow:
+
+1. Create an OAuth client in Tibber's Data API and authorize it.
+2. Call `GET https://data-api.tibber.com/v1/homes` to find your `home_id`.
+3. Call `GET https://data-api.tibber.com/v1/homes/{homeId}/devices` to list devices for that home.
+4. Find your vehicle in the returned devices list.
+
+Important for `vehicle_id`:
+
+- Do not use the Tibber internal device `id`.
+- Use the vehicle's external identifier field instead, i.e. `externalId`.
+
+Tibber's API distinguishes between its own stable internal device ID and the external/vendor ID. This integration expects the external vehicle identifier as `vehicle_id`.
+
 ## Service
 
 Service name: `tibber_vehicle_soc_update.set_soc`
