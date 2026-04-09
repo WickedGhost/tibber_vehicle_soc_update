@@ -2,6 +2,12 @@
 
 Custom Home Assistant integration for updating a Tibber vehicle battery state of charge.
 
+## Credits
+
+Big credit to [Elibart-home](https://github.com/Elibart-home) for the original solution and inspiration behind this integration:
+
+- [Elibart-home/tibber_soc_updater](https://github.com/Elibart-home/tibber_soc_updater)
+
 The integration exposes a Home Assistant service that can be called from an automation with a SoC value produced by an earlier step.
 
 ## Installation
