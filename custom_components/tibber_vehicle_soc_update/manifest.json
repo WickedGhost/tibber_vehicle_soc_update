@@ -12,5 +12,5 @@
     "custom_components.tibber_vehicle_soc_update"
   ],
   "requirements": [],
-  "version": "1.0.1"
+  "version": "1.0.0"
 }
