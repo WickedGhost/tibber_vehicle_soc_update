@@ -68,7 +68,7 @@ class TibberVehicleSocApi:
         )
 
     async def _async_execute_gql(
-        self, query: str, variables: dict[str, Any] | None = None
+        self, query: str, variables: dict[str, Any] | None = None, _retry: bool = True
     ) -> dict[str, Any]:
         """Execute a Tibber GraphQL request."""
         token = await self._async_get_token()
@@ -86,6 +86,9 @@ class TibberVehicleSocApi:
                 headers=headers,
                 timeout=30,
             ) as response:
+                if response.status == 401 and _retry:
+                    self._token = None
+                    return await self._async_execute_gql(query, variables, _retry=False)
                 response.raise_for_status()
                 payload = await response.json()
         except (ClientError, ClientResponseError, TimeoutError) as err:
